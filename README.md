@@ -3,7 +3,7 @@ A Dockerized version of Ice, Netflix's AWS Usage tool.
 
 # Introduction
 
-This is a [Dockerfile](https://docs.docker.com/reference/builder/) to create a container that runs the [AWS Usage tool Ice by Netflix](https://github.com/Netflix/ice). From the [Netflix's Ice repository](https://github.com/Netflix/ice) introduction:
+From the [Netflix's Ice repository](https://github.com/Netflix/ice) introduction:
 
 > Ice provides a birds-eye view of our large and complex cloud landscape
 > from a usage and cost perspective. Cloud resources are dynamically
