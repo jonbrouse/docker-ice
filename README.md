@@ -29,7 +29,7 @@ More information and screenshots can be found on the [project's git page](https:
 
 ## Docker Setup
 
-Open `docker-compose.yml` and add the AWS Access Key ID and Secret Key that has access to the s3  billing bucket.   
+Create a docker-compose file `cp docker-compose-template.yml docker-compose.yml` and add the AWS Access Key ID and Secret Key that has access to the s3 billing bucket.   
 
     ice:
       build: ice
@@ -57,8 +57,10 @@ Open the configuration file:  `vi ice/assets/ice.properties` and configure your 
     # Your AWS account number. You can also replace "production" with your own identifier 
     ice.account.production=
 
+## Docker Compose
 
-When you have completed the previous steps just issue `docker-compose up` 
+ - When you have completed the previous steps, issue `docker-compose up` This will start the containers in the forground so you can see if there are any errors.
+ - Once everything looks good and you can access the UI from `docker-compose up -d` to run the containers in the background.
 
 ----------
 
