@@ -44,6 +44,7 @@ More information and screenshots can be found on the [project's git page](https:
  - Create the configuration file that will be mounted to the container:  `cp ice/assets/sample.properties ice/assets/ice.properties`
  - Open the configuration file:  `vi ice/assets/ice.properties` 
   - Configure your basic setup by updating the following:
+
     
 	    # S3 bucket name where the billing files are
 	    ice.billing_s3bucketname=
