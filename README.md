@@ -61,7 +61,7 @@ More information and screenshots can be found on the [project's git page](https:
 ## Docker Compose
 
  - When you have completed the previous steps, issue `docker-compose up` This will start the containers in the forground so you can see if there are any errors.
- - Once everything looks good and you can access the UI from `docker-compose up -d` to run the containers in the background.
+ - Once everything looks good and you can access the UI issue `docker-compose up -d` to run the containers in the background.
 
 ----------
 
