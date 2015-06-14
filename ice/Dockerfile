@@ -1,4 +1,4 @@
-FROM jonbrouse/docker-java:7
+FROM jonbrouse/java:7
 MAINTAINER Jon Brouse @jonbrouse
 
 ENV INSTALL_DIR /opt/ice
