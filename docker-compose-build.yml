@@ -1,5 +1,5 @@
 ice:
-  image: jonbrouse/ice:latest
+  image: ice
   command: | 
     -Djava.net.preferIPv4Stack=true
     -Djava.net.preferIPv4Addresses
@@ -9,7 +9,7 @@ ice:
   volumes:
     - ./ice/assets/ice.properties:/opt/ice/src/java/ice.properties
 nginx:
-  image: jonbrouse/ice-proxy:latest
+  image: nginx
   ports:
     - "80:80"
   links:
