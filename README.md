@@ -20,6 +20,10 @@ This project creates a container that runs [Netflix's AWS Usage tool, Ice](https
 
 More information and screenshots can be found on the [project's git page](https://github.com/Netflix/ice). 
 
+## What is this repository?
+
+This repository seeks to ease the installation and configuration of Ice. In addition to the application container, this repository configures a nginx proxy which also helps fix URI issues I had when accessing Ice directly. After following these directions you should be able to connect to your server's IP address or FQDN over port 80 and access the Ice application.
+
 # Getting Started
 
 ## Prerequisites 
@@ -58,12 +62,14 @@ More information and screenshots can be found on the [project's git page](https:
 	    # Your AWS account number. You can also replace "production" with your own identifier 
 	    ice.account.production=
 
+More information on the configurations can be found on the [project's git page](https://github.com/Netflix/ice). 
+
 ## Docker Compose
 
  - When you have completed the previous steps, issue `docker-compose up` This will start the containers in the forground so you can see if there are any errors.
  - Once everything looks good and you can access the UI issue `docker-compose up -d` to run the containers in the background.
 
-----------
+## Base Docker Containers
 
-More information on the configurations can be found on the [project's git page](https://github.com/Netflix/ice). 
-
+- The nginx container is pulled from the [official nginx Docker Hub repository](https://registry.hub.docker.com/_/nginx/).
+- The Ice container's base image is a [Java 7 container](https://registry.hub.docker.com/u/jonbrouse/java/) which is part of an automated build repository that I maintain.
