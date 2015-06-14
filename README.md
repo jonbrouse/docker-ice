@@ -70,3 +70,16 @@ More information on the configurations can be found on the [project's git page](
 
 - The nginx container is pulled from the [official nginx Docker Hub repository](https://registry.hub.docker.com/_/nginx/).
 - The Ice container's base image is a [Java 7 container](https://registry.hub.docker.com/u/jonbrouse/java/) which is part of an automated build repository that I maintain.
+
+# Upstart Job
+
+I've included an Upstart job in the `init` directory of this repository. This will allow you to start the containers with `start ice` and stop them by running `stop ice`.  This will also start your containers at boot.
+
+1. Copy `init/ice.conf` to your host's `/etc/init/` directory
+2. Edit the the job `vi /etc/init/ice.conf` and change the path to the docker-compose file
+	
+	    pre-start exec /usr/local/bin/docker-compose -f /path/to/your/docker-compose.yml up -d
+
+		post-stop exec /usr/local/bin/docker-compose -f /path/to/your/docker-compose.yml stop
+
+4. Reload the job controller `initctl reload-configuration`
