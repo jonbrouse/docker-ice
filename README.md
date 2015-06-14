@@ -31,7 +31,7 @@ More information and screenshots can be found on the [project's git page](https:
 
  - Create the docker-compose file: `cp docker-compose-template.yml docker-compose.yml` 
  - Open docker-compose.yml `vi docker-compose.yml`
-  - Add the AWS Access Key ID and Secret Key that has access to the s3 billing bucket:
+ - Add the AWS Access Key ID and Secret Key that has access to the s3 billing bucket:
 
     ice:
       build: ice
