@@ -29,7 +29,9 @@ More information and screenshots can be found on the [project's git page](https:
 
 ## Docker Setup
 
-Create a docker-compose file `cp docker-compose-template.yml docker-compose.yml` and add the AWS Access Key ID and Secret Key that has access to the s3 billing bucket.   
+ - Create the docker-compose file: `cp docker-compose-template.yml docker-compose.yml` 
+ - Open docker-compose.yml `vi docker-compose.yml`
+  - Add the AWS Access Key ID and Secret Key that has access to the s3 billing bucket:
 
     ice:
       build: ice
@@ -39,8 +41,9 @@ Create a docker-compose file `cp docker-compose-template.yml docker-compose.yml`
         -Dice.s3AccessKeyId=<s3AccessKeyId>
         -Dice.s3SecretKey=<s3SecretKeyId> 
        
-Create a configuration file:  `cp ice/assets/sample.properties ice/assets/ice.properties`
-Open the configuration file:  `vi ice/assets/ice.properties` and configure your basic setup by updating the following:
+ - Create the configuration file that will be mounted to the container:  `cp ice/assets/sample.properties ice/assets/ice.properties`
+ - Open the configuration file:  `vi ice/assets/ice.properties` 
+  - Configure your basic setup by updating the following:
     
     # S3 bucket name where the billing files are
     ice.billing_s3bucketname=
