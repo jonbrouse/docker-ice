@@ -39,9 +39,6 @@ Open `docker-compose.yml` and add the AWS Access Key ID and Secret Key that has 
         -Dice.s3AccessKeyId=<s3AccessKeyId>
         -Dice.s3SecretKey=<s3SecretKeyId> 
        
-       
-----------
-     
 Create a configuration file:  `cp ice/assets/sample.properties ice/assets/ice.properties`
 Open the configuration file:  `vi ice/assets/ice.properties` and configure your basic setup by updating the following:
     
@@ -60,10 +57,10 @@ Open the configuration file:  `vi ice/assets/ice.properties` and configure your 
     # Your AWS account number. You can also replace "production" with your own identifier 
     ice.account.production=
 
-----------
 
 When you have completed the previous steps just issue `docker-compose up` 
 
+----------
 
 More information on the configurations can be found on the [project's git page](https://github.com/Netflix/ice). 
 
