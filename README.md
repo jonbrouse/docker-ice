@@ -56,9 +56,6 @@ This repository seeks to ease the installation and configuration of Ice. In addi
 	    # S3 bucket name where Ice can store output files
 	    ice.work_s3bucketname=
 	    
-	    # Prefix of Ice output files
-	    ice.work_s3bucketprefix=
-	    
 	    # Your AWS account number. You can also replace "production" with your own identifier 
 	    ice.account.production=
 
