@@ -60,6 +60,10 @@ Open the configuration file:  `vi ice/assets/ice.properties` and configure your 
     # Your AWS account number. You can also replace "production" with your own identifier 
     ice.account.production=
 
+----------
+
+When you have completed the previous steps just issue `docker-compose up` 
+
 
 More information on the configurations can be found on the [project's git page](https://github.com/Netflix/ice). 
 
