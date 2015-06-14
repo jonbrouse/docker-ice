@@ -45,20 +45,20 @@ More information and screenshots can be found on the [project's git page](https:
  - Open the configuration file:  `vi ice/assets/ice.properties` 
   - Configure your basic setup by updating the following:
     
-    # S3 bucket name where the billing files are
-    ice.billing_s3bucketname=
-    
-    # Your company name
-    ice.companyName=	
-    
-    # S3 bucket name where Ice can store output files
-    ice.work_s3bucketname=
-	
-	# prefix of Ice output files
-	ice.work_s3bucketprefix=
-    
-    # Your AWS account number. You can also replace "production" with your own identifier 
-    ice.account.production=
+	    # S3 bucket name where the billing files are
+	    ice.billing_s3bucketname=
+	    
+	    # Your company name
+	    ice.companyName=
+	    
+	    # S3 bucket name where Ice can store output files
+	    ice.work_s3bucketname=
+	    
+	    # Prefix of Ice output files
+	    ice.work_s3bucketprefix=
+	    
+	    # Your AWS account number. You can also replace "production" with your own identifier 
+	    ice.account.production=
 
 ## Docker Compose
 
