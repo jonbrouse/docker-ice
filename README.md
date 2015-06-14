@@ -1,6 +1,6 @@
 # Ice, Ice Baby 
 
-This project creates a container that runs the [AWS Usage tool Ice by Netflix](https://github.com/Netflix/ice) and supplies a Nginx proxy container as well. From the [Netflix's Ice repository](https://github.com/Netflix/ice) introduction:
+This project creates a container that runs [Netflix's AWS Usage tool, Ice](https://github.com/Netflix/ice) and supplies a Nginx proxy container as well. From the [Netflix's Ice repository](https://github.com/Netflix/ice) introduction:
 
 > Ice provides a birds-eye view of our large and complex cloud landscape
 > from a usage and cost perspective. Cloud resources are dynamically
