@@ -36,5 +36,3 @@ EXPOSE 8080
 ENTRYPOINT ["/opt/ice/grailsw"]
 
 CMD []
-
-#WORKDIR /
