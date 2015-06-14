@@ -24,12 +24,12 @@ More information and screenshots can be found on the [project's git page](https:
 
 ## Prerequisites 
 
- - First sign up for Amazon's programmatic billing access [here](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/detailed-billing-reports.html) to receive detailed billing(hourly) reports. Verify you receive monthly billing file in the following format: <accountid>-aws-billing-detailed-line-items-<year>-<month>.csv.zip.
+ - Sign up for Amazon's programmatic billing access [here](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/detailed-billing-reports.html) to receive detailed billing(hourly) reports. Verify you receive monthly billing file in the following format: <accountid>-aws-billing-detailed-line-items-<year>-<month>.csv.zip.
  - [Docker](https://docs.docker.com/installation/) and [Docker Compose](https://docs.docker.com/compose/install/) installed.
 
 ## Docker Setup
 
-Open `docker-compose.yml` and add the AWS Access Key ID and Secret Key that has access to the billing S3 bucket.   
+Open `docker-compose.yml` and add the AWS Access Key ID and Secret Key that has access to the s3  billing bucket.   
 
     ice:
       build: ice
