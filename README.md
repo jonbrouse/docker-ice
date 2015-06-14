@@ -1,4 +1,4 @@
-# ICE, ICE Baby 
+# Ice, Ice Baby 
 
 This is a [Dockerfile](https://docs.docker.com/reference/builder/) to create a container that runs the [AWS Usage tool Ice by Netflix](https://github.com/Netflix/ice). From the [Netflix's Ice repository](https://github.com/Netflix/ice) introduction:
 
