@@ -33,15 +33,13 @@ More information and screenshots can be found on the [project's git page](https:
  - Open docker-compose.yml `vi docker-compose.yml`
  - Add the AWS Access Key ID and Secret Key that has access to the s3 billing bucket:
 
-
-    ice:
-      build: ice
-      command: |
-        -Djava.net.preferIPv4Stack=true
-        -Djava.net.preferIPv4Addresses
-        -Dice.s3AccessKeyId=<s3AccessKeyId>
-        -Dice.s3SecretKey=<s3SecretKeyId> 
-
+	    ice:
+	      build: ice
+	      command: |
+	        -Djava.net.preferIPv4Stack=true
+	        -Djava.net.preferIPv4Addresses
+	        -Dice.s3AccessKeyId=<s3AccessKeyId>
+	        -Dice.s3SecretKey=<s3SecretKeyId>
        
  - Create the configuration file that will be mounted to the container:  `cp ice/assets/sample.properties ice/assets/ice.properties`
  - Open the configuration file:  `vi ice/assets/ice.properties` 
