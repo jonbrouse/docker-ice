@@ -1,6 +1,6 @@
 # Ice, Ice Baby 
 
-This project creates a container that runs [Netflix's AWS Usage tool, Ice](https://github.com/Netflix/ice) and supplies a Nginx proxy container as well. From [Netflix's Ice repository](https://github.com/Netflix/ice) introduction:
+This project leverages Docker to create images that run [Netflix's AWS Usage tool, Ice](https://github.com/Netflix/ice). From [Netflix's Ice repository](https://github.com/Netflix/ice) introduction:
 
 > Ice provides a birds-eye view of our large and complex cloud landscape
 > from a usage and cost perspective. Cloud resources are dynamically
@@ -22,7 +22,7 @@ More information and screenshots can be found on the [project's git page](https:
 
 ## What is this repository?
 
-This repository seeks to ease the installation and configuration of Ice. In addition to the application container, this repository configures a nginx proxy which also helps fix URI issues I had when accessing Ice directly. After following these directions you should be able to connect to your server's IP address or FQDN over port 80 and access the Ice application.
+This repository seeks to ease the installation and configuration of Ice. In addition to the application container, this repository configures a nginx proxy which also helps fix URI issues I had when accessing Ice directly. After following these directions you should be able to connect to your server's IP address or FQDN over port 80 and access the Ice application. Additionally, I've supplied an Upstart job script you can leverge to start your containers on boot.
 
 # Getting Started
 
