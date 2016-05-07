@@ -83,3 +83,9 @@ I've included an Upstart job in the `init` directory of this repository. This wi
 		post-stop exec /usr/local/bin/docker-compose -f /path/to/your/docker-compose.yml stop
 
 4. Reload the job controller `initctl reload-configuration`
+
+# Notes
+
+## Highstock.js
+
+The version of highstock.js is locked at 4.2.1 due to a breaking change in newer versions.
