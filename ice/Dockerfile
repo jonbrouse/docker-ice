@@ -7,6 +7,8 @@ ENV GRAILS_VERSION 2.4.4
 ENV GRAILS_HOME ${HOME_DIR}/.grails/wrapper/${GRAILS_VERSION}/grails-${GRAILS_VERSION}
 ENV PATH $PATH:${HOME_DIR}/.grails/wrapper/${GRAILS_VERSION}/grails-${GRAILS_VERSION}/bin/
 
+ARG JAVA_OPTS
+
 WORKDIR ${HOME_DIR}
 
 # Install required software
