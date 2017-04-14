@@ -1,17 +1,20 @@
-ice:
-  image: jonbrouse/ice:latest
-  command: | 
-    -Djava.net.preferIPv4Stack=true
-    -Djava.net.preferIPv4Addresses
-    -Duser.timezone=<Your Timezone ie America/New_York>
-    -Dice.s3AccessKeyId=<s3AccessKeyId>
-    -Dice.s3SecretKey=<s3SecretKeyId>
-    run-app
-  volumes:
-    - ./ice/assets/ice.properties:/opt/ice/src/java/ice.properties
-nginx:
-  image: jonbrouse/ice-proxy:latest
-  ports:
-    - "80:80"
-  links:
-    - ice:ice
+version: '2'
+services:
+  ice:
+    image: jonbrouse/ice:latest
+    build: ice
+    command: | 
+      -Djava.net.preferIPv4Stack=true
+      -Djava.net.preferIPv4Addresses
+      -Duser.timezone=America/New_York
+      -Dice.s3AccessKeyId=<s3AccessKeyId>
+      -Dice.s3SecretKey=<s3SecretKeyId>
+      run-app
+    volumes:
+      - ./ice/assets/ice.properties:/opt/ice/src/java/ice.properties
+  nginx:
+    image: jonbrouse/ice-proxy:latest
+    ports:
+      - "80:80"
+    links:
+      - ice:ice
