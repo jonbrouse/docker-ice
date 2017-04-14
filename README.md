@@ -34,13 +34,14 @@ This repository seeks to ease the installation and configuration of Ice. In addi
 ## Docker Setup
 
  - Create the docker-compose file: `cp docker-compose-template.yml docker-compose.yml` 
- - Open docker-compose.yml and add the AWS Access Key ID and Secret Key that has access to the s3 billing bucket: `vi docker-compose.yml`
+ - Open docker-compose.yml and configure the Timezone as well as add the AWS Access Key ID and Secret Key that has access to the s3 billing bucket: `vi docker-compose.yml`
 
 	    ice:
 	      build: ice
 	      command: |
 	        -Djava.net.preferIPv4Stack=true
 	        -Djava.net.preferIPv4Addresses
+		-Duser.timezone=<Your Timezone ie America/New_York>
 	        -Dice.s3AccessKeyId=<s3AccessKeyId>
 	        -Dice.s3SecretKey=<s3SecretKeyId>
        
