@@ -6,6 +6,7 @@ ENV HOME_DIR /root
 ENV GRAILS_VERSION 2.4.4
 ENV GRAILS_HOME ${HOME_DIR}/.grails/wrapper/${GRAILS_VERSION}/grails-${GRAILS_VERSION}
 ENV PATH $PATH:${HOME_DIR}/.grails/wrapper/${GRAILS_VERSION}/grails-${GRAILS_VERSION}/bin/
+ENV ICE_VERSION 1.0
 
 ARG JAVA_OPTS
 
@@ -28,7 +29,7 @@ WORKDIR ${INSTALL_DIR}
 RUN \
   mkdir /mnt/ice_processor && \
   mkdir /mnt/ice_reader && \
-  curl https://codeload.github.com/Netflix/ice/tar.gz/master | tar -zx -C /opt/ice --strip 1 && \
+  curl -L https://github.com/Teevity/ice/archive/$ICE_VERSION.tar.gz | tar -zx -C /opt/ice --strip 1 && \
   grails ${JAVA_OPTS} wrapper && \
   rm grails-app/i18n/messages.properties && \ 
   sed -i -e '1i#!/bin/bash\' grailsw
