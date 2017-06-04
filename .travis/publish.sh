@@ -6,7 +6,7 @@ setup_git() {
 }
 
 update_version() {
-  sed -i "/ENV\ ICE_VERSION/c\ENV\ ICE_VERSION\ $NEW_VERSION" ../ice/Dockerfile
+  sed -i "/ENV\ ICE_VERSION/c\ENV\ ICE_VERSION\ $NEW_VERSION" ice/Dockerfile
   git commit ice/Dockerfile -m "Created new release: $NEW_VERSION"
   git tag -m "New version of ICE" "$NEW_VERSION.0"
 }
