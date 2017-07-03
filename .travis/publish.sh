@@ -7,8 +7,8 @@ timestamp() {
 setup_git() {
   timestamp Setting up git config...
   git config --global push.default matching
-  #git config --global user.email "travis@travis-ci.org"
-  #git config --global user.name "Travis CI"
+  git config --global user.email "jbrouse19@gmail.com"
+  git config --global user.name "Jon Brouse"
 }
 
 update_ice_version() {
