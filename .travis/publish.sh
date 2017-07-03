@@ -14,7 +14,7 @@ update_version() {
 upload_files() {
   git remote rm origin
   git remote add origin https://$GH_TOKEN@github.com/jonbrouse/docker-ice.git > /dev/null 2>&1
-  git push --quiet --set-upstream origin
+  git push --quiet --set-upstream origin master
   git push --tags
 }
 
