@@ -14,14 +14,12 @@ WORKDIR ${HOME_DIR}
 
 # Install required software
 RUN \
-  apt-get update && \
-  apt-get install -y unzip && \
-  rm -rf /var/lib/apt/lists/* && \
+  curl -Lo unzip.deb http://http.us.debian.org/debian/pool/main/u/unzip/unzip_6.0-16+deb8u3_amd64.deb && \
+  dpkg -i unzip.deb && \
   mkdir -p ${INSTALL_DIR} && \
   mkdir -p .grails/wrapper/${GRAILS_VERSION} && \
-  curl -o .grails/wrapper/${GRAILS_VERSION}/grails-${GRAILS_VERSION}.zip http://dist.springframework.org.s3.amazonaws.com/release/GRAILS/grails-${GRAILS_VERSION}.zip && \
-  unzip .grails/wrapper/${GRAILS_VERSION}/grails-${GRAILS_VERSION}.zip -d .grails/wrapper/${GRAILS_VERSION} && \
-  rm -rf .grails/wrapper/${GRAILS_VERSION}/grails-${GRAILS_VERSION}.zip
+  unzip /root/grails-${GRAILS_VERSION}.zip -d .grails/wrapper/${GRAILS_VERSION} && \
+  rm -rf unzip.deb ${GRAILS_VERSION}/grails-${GRAILS_VERSION}.zip
 
 WORKDIR ${INSTALL_DIR} 
 
