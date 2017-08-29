@@ -73,7 +73,7 @@ More information on the configurations can be found on the [project's git page](
 ## Base Docker Containers
 
 - The nginx container is pulled from the [official nginx Docker Hub repository](https://registry.hub.docker.com/_/nginx/).
-- The Ice container's base image is a [Java 7 container](https://registry.hub.docker.com/u/jonbrouse/java/) which is part of an automated build repository that I maintain.
+- The Ice container's base image is the [openjdk Java 7 image](https://hub.docker.com/_/openjdk/).
 
 # Upstart Job
 
