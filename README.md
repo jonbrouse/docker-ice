@@ -41,7 +41,7 @@ This repository seeks to ease the installation and configuration of Ice. In addi
 	      command: |
 	        -Djava.net.preferIPv4Stack=true
 	        -Djava.net.preferIPv4Addresses
-		-Duser.timezone=<Your Timezone ie America/New_York>
+	        -Duser.timezone=<Your Timezone ie America/New_York>
 	        -Dice.s3AccessKeyId=<s3AccessKeyId>
 	        -Dice.s3SecretKey=<s3SecretKeyId>
        
