@@ -50,6 +50,9 @@ This repository seeks to ease the installation and configuration of Ice. In addi
     
 	    # s3 bucket name where the billing files are
 	    ice.billing_s3bucketname=
+
+            # location for the billing bucket
+            ice.billing_s3bucketregion=
 	    
 	    # Your company name
 	    ice.companyName=
