@@ -90,3 +90,25 @@ I've included an Upstart job in the `init` directory of this repository. This wi
 ## Highstock.js
 
 The version of highstock.js is locked at 4.2.1 due to a breaking change in newer versions.
+
+## OutOfMemory Exception
+
+To adjust the memory allocation, add the following line to the `docker-compose.yml` file:
+
+```
+...
+environment:
+- GRAILS_OPTS=-server -Xmx4G -Xms1G -Dfile.encoding=UTF-8
+...
+```
+
+## Docker Run Command
+
+To launch just the Ice container via the `docker run` command, issue the following:
+
+```
+docker run -v `pwd`/ice/assets/ice.properties:/opt/ice/src/java/ice.properties \
+           -e GRAILS_OPTS="-server -Xms2g -Xmx2g -server" \
+           jonbrouse/ice \
+           -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Addresses -Duser.timezone=America/New_York -Dice.s3AccessKeyId=XXXXXXXXXXXXX -Dice.s3SecretKey=XXXXXXXXX run-app
+```
