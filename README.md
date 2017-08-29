@@ -41,7 +41,7 @@ This repository seeks to ease the installation and configuration of Ice. In addi
 	      command: |
 	        -Djava.net.preferIPv4Stack=true
 	        -Djava.net.preferIPv4Addresses
-		-Duser.timezone=<Your Timezone ie America/New_York>
+	        -Duser.timezone=<Your Timezone ie America/New_York>
 	        -Dice.s3AccessKeyId=<s3AccessKeyId>
 	        -Dice.s3SecretKey=<s3SecretKeyId>
        
@@ -50,6 +50,9 @@ This repository seeks to ease the installation and configuration of Ice. In addi
     
 	    # s3 bucket name where the billing files are
 	    ice.billing_s3bucketname=
+
+            # location for the billing bucket
+            ice.billing_s3bucketregion=
 	    
 	    # Your company name
 	    ice.companyName=
