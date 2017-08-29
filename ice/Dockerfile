@@ -24,7 +24,7 @@ WORKDIR ${INSTALL_DIR}
 RUN mkdir /mnt/ice_processor /mnt/ice_reader && \
     curl -fsSL https://github.com/Teevity/ice/archive/v${ICE_VERSION}.tar.gz | tar zx --strip-components=1 && \
     grails ${JAVA_OPTS} wrapper && \
-    rm grails-app/i18n/messages.properties && \ 
+    rm grails-app/i18n/messages.properties && \
     sed -i -e '1i#!/bin/bash\' grailsw
 
 EXPOSE 8080
