@@ -28,8 +28,11 @@ This repository seeks to ease the installation and configuration of Ice. In addi
 
 ## Prerequisites 
 
- - Sign up for Amazon's programmatic billing access [here](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/detailed-billing-reports.html) to receive detailed billing(hourly) reports. Verify you receive monthly billing file in the following format: <accountid>-aws-billing-detailed-line-items-<year>-<month>.csv.zip.
  - [Docker](https://docs.docker.com/installation/) and [Docker Compose](https://docs.docker.com/compose/install/) installed.
+ - Sign up for Amazon's programmatic billing access [here](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/detailed-billing-reports.html) to receive detailed billing(hourly) reports. Verify you receive monthly billing file in the following format: 
+ 
+ ```<accountid>-aws-billing-detailed-line-items-<year>-<month>.csv.zip```
+
 
 ## Docker Setup
 
