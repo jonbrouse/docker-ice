@@ -1,6 +1,6 @@
 # Ice, Ice Baby 
 
-This project leverages Docker to create images that run [Netflix's AWS Usage tool, Ice](https://github.com/Netflix/ice). From [Netflix's Ice repository](https://github.com/Netflix/ice) introduction:
+This project leverages Docker to create images that run [Teevity's AWS Usage tool, Ice](https://github.com/Teevity/ice) (formerly Netflix Ice). From [Teevity's Ice repository](https://github.com/Teevity/ice) introduction:
 
 > Ice provides a birds-eye view of our large and complex cloud landscape
 > from a usage and cost perspective. Cloud resources are dynamically
@@ -18,7 +18,7 @@ This project leverages Docker to create images that run [Netflix's AWS Usage too
 > renders them to UI. UI queries reader and renders interactive graphs
 > and tables in the browser.
 
-More information and screenshots can be found on the [project's git page](https://github.com/Netflix/ice). 
+More information and screenshots can be found on the [project's git page](https://github.com/Teevity/ice). 
 
 ## What is this repository?
 
@@ -66,7 +66,7 @@ This repository seeks to ease the installation and configuration of Ice. In addi
 	    # Your AWS account number. You can also replace "production" with your own identifier 
 	    ice.account.production=
 
-More information on the configurations can be found on the [project's git page](https://github.com/Netflix/ice). 
+More information on the configurations can be found on the [project's git page](https://github.com/Teevity/ice). 
 
 ## Docker Compose
 
