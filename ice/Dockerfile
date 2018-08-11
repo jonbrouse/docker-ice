@@ -1,4 +1,4 @@
-FROM openjdk:8u131-jdk-alpine
+FROM openjdk:alpine
 MAINTAINER Jon Brouse @jonbrouse
 
 ENV INSTALL_DIR /opt/ice
