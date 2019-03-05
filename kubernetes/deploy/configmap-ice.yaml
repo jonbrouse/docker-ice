@@ -1,0 +1,29 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ice
+data:
+  ice.properties: |
+    ice.processor=true
+    ice.reader=true
+    ice.reservationCapacityPoller=false
+    ice.reservationPeriod=oneyear
+    ice.reservationUtilization=HEAVY
+    ice.highstockUrl=https://code.highcharts.com/stock/4.2.1/highstock.js
+    ice.urlPrefix=
+    ice.fromEmail=
+    ice.ondemandCostAlertThreshold=250
+    ice.ondemandCostAlertEmails=
+    ice.billing_s3bucketname=<your-s3-detailed-billing-bucket-here>
+    ice.billing_s3bucketregion=
+    ice.billing_s3bucketprefix=,
+    ice.startmillis=1364774400000
+    ice.companyName=
+    ice.work_s3bucketname=<your-s3-ice-work-bucket-here>
+    ice.work_s3bucketprefix=ice/
+    ice.processor.localDir=/mnt/ice_processor
+    ice.reader.localDir=/mnt/ice_reader
+    ice.monthlycachesize=12
+    ice.owneraccount.account1.role=ice
+    ice.owneraccount.account1.externalId=
