@@ -1,0 +1,41 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ice-nginx
+data:
+  default.conf: |
+    server {
+      listen       80;
+
+      location = / {
+        rewrite ^ /ice/dashboard/summary permanent;
+      }
+
+      location = /ice/ {
+        rewrite ^ /ice/dashboard/summary permanent;
+      }
+
+      location = /ice/dashboard/ {
+        rewrite ^ /ice/dashboard/summary permanent;
+      }
+
+    location / {
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://localhost:8080/;
+      }
+
+      location /ice/dashboard/summary {
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://localhost:8080/ice/dashboard/summary;
+      }
+
+      error_page   500 502 503 504  /50x.html;
+      location = /50x.html {
+        root   /usr/share/nginx/html;
+      }
+    }

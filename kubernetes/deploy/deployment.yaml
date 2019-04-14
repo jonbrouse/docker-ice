@@ -1,0 +1,63 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ice
+spec:
+  selector:
+    matchLabels:
+      app: ice
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: ice
+    spec:        
+      volumes:
+        - name: nginx-vol
+          configMap:
+            name: ice-nginx
+        - name: ice-vol
+          configMap:
+            name: ice
+      terminationGracePeriodSeconds: 10
+      containers:
+        - name: nginx
+          image: nginx:1.13.3-alpine
+          ports:
+            - containerPort: 80
+          imagePullPolicy: IfNotPresent  
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "150m"
+          volumeMounts:
+            - mountPath: /etc/nginx/conf.d/
+              name: nginx-vol
+        
+        - name: ice
+          image: jonbrouse/ice:latest
+          ports:
+            - containerPort: 8080
+          imagePullPolicy: IfNotPresent
+          env:
+            - GRAILS_OPTS=-server -Xmx2G -Xms1G -Dfile.encoding=UTF-8
+          command:
+            - /opt/ice/grailsw
+            - -Djava.net.preferIPv4Stack=true
+            - -Djava.net.preferIPv4Addresses
+            - -Duser.timezone=<Your Timezone ie America/New_York>
+            - -Dice.s3AccessKeyId=<s3AccessKeyId>
+            - -Dice.s3SecretKey=<s3SecretKeyId>
+            - run-app
+          resources:
+            limits:
+              memory: "2048Mi"
+              cpu: "500m"
+          volumeMounts:
+            - mountPath: /opt/ice/src/java/ice.properties
+              subPath: ice.properties
+              name: ice-vol
+      restartPolicy: Always

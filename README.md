@@ -118,3 +118,15 @@ docker run -v `pwd`/ice/assets/ice.properties:/opt/ice/src/java/ice.properties \
            jonbrouse/ice \
            -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Addresses -Duser.timezone=America/New_York -Dice.s3AccessKeyId=XXXXXXXXXXXXX -Dice.s3SecretKey=XXXXXXXXX run-app
 ```
+
+## Kubernetes deployment on AWS
+
+To deploy ice to a kubernetes cluster running on AWS
+
+1. Update [configmap-ice.yaml](./kubernetes/deploy/configmap-ice.yaml) `ice.companyName=`, `ice.billing_s3bucketname=<your-s3-detailed-billing-bucket-here>`, `ice.work_s3bucketname=<your-s3-ice-work-bucket-here>`
+
+2. Update [deployment.yaml](./kubernetes/deploy/deployment.yaml) with `-Duser.timezone=<Your Timezone ie America/New_York>`,`- -Dice.s3AccessKeyId=<s3AccessKeyId>`, `- -Dice.s3SecretKey=<s3SecretKeyId>`
+
+3. Deploy `kubectl apply -f ./kubernetes/deploy/`
+
+> Make sure to replace the placeholders excluding the \<angle brackets\>
