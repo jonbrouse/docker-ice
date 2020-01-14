@@ -6,7 +6,6 @@ ENV HOME_DIR /root
 ENV GRAILS_VERSION 2.4.4
 ENV GRAILS_HOME ${HOME_DIR}/.grails/wrapper/${GRAILS_VERSION}/grails-${GRAILS_VERSION}
 ENV PATH $PATH:${HOME_DIR}/.grails/wrapper/${GRAILS_VERSION}/grails-${GRAILS_VERSION}/bin/
-ENV ICE_VERSION 1.1.2
 
 ARG JAVA_OPTS
 
@@ -22,8 +21,12 @@ WORKDIR ${INSTALL_DIR}
 
 # Ice setup
 RUN mkdir /mnt/ice_processor /mnt/ice_reader && \
-    curl -fsSL https://github.com/Teevity/ice/archive/v${ICE_VERSION}.tar.gz | tar zx --strip-components=1 && \
-    grails ${JAVA_OPTS} wrapper && \
+    curl -fsSLO https://github.com/jimroth/ice/archive/master.zip && \
+    unzip master.zip && \
+    mv ice-master/* . && \
+    rm -rf master.zip ./ice-master
+
+RUN grails ${JAVA_OPTS} wrapper && \
     rm grails-app/i18n/messages.properties && \
     sed -i -e '1i#!/bin/bash\' grailsw
 
